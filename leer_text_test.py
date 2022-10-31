@@ -7,7 +7,7 @@ def test_compare_signs():
     main = IdentificateCutPoint()
 
     assert main.compare_signs(0,13, text) == (13, True) 
-    assert main.compare_signs(0,4, text) == False
+    assert main.compare_signs(0,4, text) == (0, False) 
     
 
 

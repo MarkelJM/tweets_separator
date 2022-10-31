@@ -1,9 +1,9 @@
-from setting import LIMIT_DOWN, LIMIT_UP, REDUCE_LIMIT, SIGN_1_LEVEL, SIGN_2_LEVEL
+from setting import  SIGN_1_LEVEL, SIGN_2_LEVEL
 
 class IdentificateCutPoint():
     
     
-    def compare_signs(self, lim_down, lim_up, text):  
+    def compare_signs(self, lim_down, lim_up, text): #ya que queremos usar tests no usaremos self.text(los test tiene su propio texto) 
         
         index = 0
         sign_flag = False
@@ -28,4 +28,11 @@ class IdentificateCutPoint():
         if text[pos] in self.direct_cutter or text[pos] in self.undirect_cutter:
             return True
         else:
-            False
+            return False
+
+    def seek_last_space(self,  lim_down, lim_up, text):
+        str_space = " "
+        for pos in range(lim_down, lim_up, -1): 
+            if text[pos] == " ":
+                return pos
+
