@@ -25,3 +25,10 @@ def test_char_comparator():
     assert main.is_cutter(":", text) == True
     assert main.is_cutter("?", text) == True
     assert main.is_cutter(" ", text) == False
+
+def test_seek_last_space():
+    text = "Ha sido duro, muchas horas aprendiendo"
+
+    main = IdentificateCutPoint()
+
+    assert main.seek_last_space(0, 38, text) == 27
