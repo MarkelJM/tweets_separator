@@ -31,7 +31,7 @@ class IdentificateCutPoint():
             return False
 
     def seek_last_space(self,  lim_down, lim_up, text):
-        str_space = " "
+        #str_space = " "
         for pos in range(lim_down, lim_up, -1): 
             if text[pos] == " ":
                 return pos
