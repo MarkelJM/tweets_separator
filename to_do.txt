@@ -6,4 +6,20 @@ DEL SUPUESTO TWEET
 3.done- PEDIR TEXTO
 
 4.done- CORTAR, CLONAR ---> CREAR LOS RESPECTIVOS TWEETS DEPENDIENDO DEL NUMERO DE PUNTOS DE CORTES
-5. al cortar añadir a BBSS SQL
+
+5.Revisar errores/Errores a solucionar: 
+main-done
+lista lugares
+input
+cortar_tweet
+leer_texto
+
+
+6. al cortar añadir a BBSS SQL
+
+7.posibilidad de exportar texto de un google sheet o word
+
+8. comprobar texto dado o exportado:
+
+8a) Los excesos de espacios--->en caso de haber  espacios seguidos, eliminar espacios y dejar uno(para texto inicial
+párrafos y errores)
