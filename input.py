@@ -10,7 +10,11 @@ class ObtainText():
         return text
 
     def check_text_len(self, text):
-        if len(self.request_text()) >= self.max_char:
+        """
+        si la longitud del texto es mayor a los maximos aceptados por el programa dice que sí, que es mayor
+        False si la longitud es aceptable
+        """
+        if len(text) >= self.max_char:
             return True
         else:
             return False
