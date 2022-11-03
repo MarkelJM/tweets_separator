@@ -22,4 +22,5 @@ leer_texto
 8. comprobar texto dado o exportado:
 
 8a) Los excesos de espacios--->en caso de haber  espacios seguidos, eliminar espacios y dejar uno(para texto inicial
-párrafos y errores)
+párrafos y errores) IMPORTANTE al princio de la cadena añadir un espacio, la razon es que cuando busca elementos de la lista,
+el limite inferior debe ser +1 para evitar repetirse

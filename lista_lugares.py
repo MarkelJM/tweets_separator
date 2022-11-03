@@ -14,7 +14,7 @@ class LimitPoints():
     
     
     def run_loop(self, text):
-        list_sign = []
+        list_sign = [0] #debe comenzar con el primer caracter
         
         """
         Bucle principal donde se debe saber si entre limite maximo y minimo de tweet hay signos  
@@ -51,7 +51,7 @@ class LimitPoints():
                 if self.limit_2 == 0:
                     index = self.index.seek_last_space(self.reduce_margin(self.limit_2), self.limit_2, text)
                     list_sign.append(index)         
-           
+        list_sign.append(len(text))  #ultima posicion para cortar debe ser ultimo caracter 
         return list_sign
 
     def increase_limit(self, pos2, text):
