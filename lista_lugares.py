@@ -57,10 +57,14 @@ class LimitPoints():
     def increase_limit(self, pos2, text):
         increaser = INCREASE_LIMIT
         new_lim_up = pos2 + increaser
+        print(pos2)
+        print(text[pos2])
+        print(len(text))
+        print(type(new_lim_up))
         if new_lim_up >= len(text):
             new_lim_up = len(text)
             return new_lim_up
-        else:  
+        else: 
             return new_lim_up
     def decrease_limit(self, pos1):        
         new_lim_low = self.reduce_margin(pos1) 
