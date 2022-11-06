@@ -28,15 +28,15 @@ class LimitPoints():
                 break
             #llamar a la clase que identificaç
             identificate_limit = self.index.compare_signs(self.reduce_margin(self.limit_2), self.limit_2, text)
-            """devuelve posicion del ultimo signo y flag True si lo hay en tupla o 0 y False si no signos"""
+            """devuelve una tupla la posicion del ultimo signo y  True si lo hay  o 0 y False si no hay signos"""
             #si hay signos siguiente paso 
             if identificate_limit[1] == True:
-                if self.is_pos_repeated(identificate_limit[1], list_sign) == False:
+                if self.is_pos_repeated(identificate_limit[0], list_sign) == False:
                     list_sign.append(identificate_limit[0])
                     #aumentamos limites para siguiente tweet
                     self.limit_2 = self.increase_limit( identificate_limit[0], text)
                     
-                elif self.is_pos_repeated(identificate_limit[1], list_sign):
+                elif self.is_pos_repeated(identificate_limit[0], list_sign):
                     """despues aumenta el limite si en 140 caracteres no hay signos llegará al último 
                     punto de partira identificando el ultimos signo o espacio(repitiendolo) para evitar esto
                     creamos esta sección

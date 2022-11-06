@@ -14,10 +14,10 @@ class IdentificateCutPoint():
         #comparara si entre los limites logicos del texto hay signos de cortes
         for pos in range(lim_down, lim_up):
             #identifica signos de cortes
-            if self.is_cutter(pos, text):#self.text  is not neccfessary, but we need it for the test
+            if self.is_cutter(pos, text) == True:# compara si es un signo o no///self.text  is not neccfessary, but we need it for the test
                 index = pos
                 sign_flag = True
-
+            
         return index, sign_flag
             
             #añade la posicion del corte a la lista
