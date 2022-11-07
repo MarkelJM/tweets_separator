@@ -11,7 +11,8 @@ if __name__ == "__main__":
     if text_len_checker[0] == False:
         pass
     else:
-        cut_text.read_all_text(text_len_checker[1],lista_signos.run_loop(text_len_checker[1]))#para cortar pide el texto y !!!!
+        tweets = cut_text.read_all_text(text_len_checker[1],lista_signos.run_loop(text_len_checker[1]))#para cortar pide el texto y !!!!
         print("comienza")
+        print(tweets)
     
     
