@@ -7,7 +7,7 @@ DEL SUPUESTO TWEET
 
 4.done- CORTAR, CLONAR ---> CREAR LOS RESPECTIVOS TWEETS DEPENDIENDO DEL NUMERO DE PUNTOS DE CORTES
 
-5.Revisar errores/Errores a solucionar: 
+5.done-Revisar errores/Errores a solucionar: 
 main-done
 lista lugares
 input
