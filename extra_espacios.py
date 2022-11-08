@@ -25,7 +25,10 @@ class EliminatedSpaces():
     
     def check_continue_spaces(self, list):
         """
-        busca eliminar las posiciones  de espacios seguidos
+        busca crear dos listas(podria ser tranvilamente dic) de la lista recibida,
+         donde identifica en qué posicion comienza el 2. espacio ya repetido(el primero no se toca por que
+         es el espacio minimo entre palabras) sabiendo donde está el segundo espacio y la "longitud" 
+         de espacios extra repetidos sabremos de donde a donde clonar el texto original
         """
         last_pos = list[0]
         continue_numer_index = 0
@@ -53,15 +56,23 @@ class EliminatedSpaces():
                     list_repeated_spaces.append(continue_numer_index)
                     list_continued.append(i)
                     # reiniciar contador a 0
-                    continue_numer_index = 1
-                
-                  
-                    
+                    continue_numer_index = 1                                 
         return list_continued, list_repeated_spaces
             
 
 
-
+    def clean_clone_text(self, text):
+        texto_final = ""
+        texto_original = text
+        tupla_espacios = self.check_continue_spaces(self.check_continue_spaces())
+        list_space_start = tupla_espacios[0]
+        list_space_length = tupla_espacios[1]
+        for i in range(len(list_space_start)):
+            initial =list_space_start[i] -1
+            end = list_space_start[i] + list_space_length[i]
+            texto = texto_original[initial : end]
+            texto_final = texto_final + texto
+        return texto_final
 
 
 
