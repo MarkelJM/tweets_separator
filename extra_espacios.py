@@ -23,25 +23,41 @@ class EliminatedSpaces():
             self.past_char = self.text[pos]
         return list_repeated_space
     
-    def check_repeated_spaces(self, list):
+    def check_continue_spaces(self, list):
         """
         busca eliminar las posiciones  de espacios seguidos
         """
-
         last_pos = list[0]
         continue_numer_index = 0
-        list_repeated = []
-        for i in list:
-            
+        list_continued = []
+        list_repeated_spaces = []
+        for i in list:            
             if last_pos  + continue_numer_index == i :
-                
-                if  continue_numer_index > 0:
-                  
-                
-                
-            else:
+                if  continue_numer_index == 0:
+                    #añadir a la lista de posicionws
+                    list_continued.append(i)
+                    # +1 al contador
+                    continue_numer_index += 1
+                else:
+                    #comrpobar si es el ultimo elemento si lo es añadir el contador a su lista
+                    if i == list[-1]:
+                      list_repeated_spaces.append(continue_numer_index)  
+                    # +1 al contador
+                    else:
+                        continue_numer_index += 1            
+            else: # no sigue la continuidad de los espacios --> hay palabras en medio
                 last_pos = i
-            
+                # añadir a la lista el contador -1(para restar la ultima suma que ha hecho y que no  era continuio)   
+                if continue_numer_index > 0:
+                    continue_numer_index -= 1
+                    list_repeated_spaces.append(continue_numer_index)
+                    list_continued.append(i)
+                    # reiniciar contador a 0
+                    continue_numer_index = 1
+                
+                  
+                    
+        return list_continued, list_repeated_spaces
             
 
 
