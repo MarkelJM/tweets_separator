@@ -64,7 +64,7 @@ class EliminatedSpaces():
     def clean_clone_text(self, text):
         texto_final = ""
         texto_original = text
-        tupla_espacios = self.check_continue_spaces(self.check_continue_spaces())
+        tupla_espacios = self.check_continue_spaces(self.compare_last_char())
         list_space_start = tupla_espacios[0]
         list_space_length = tupla_espacios[1]
         for i in range(len(list_space_start)):
