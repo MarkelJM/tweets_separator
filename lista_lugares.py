@@ -30,7 +30,7 @@ class LimitPoints():
             identificate_limit = self.index.compare_signs(self.reduce_margin(self.limit_2), self.limit_2, text)
             """devuelve una tupla la posicion del ultimo signo y  True si lo hay  o 0 y False si no hay signos"""
             #si hay signos siguiente paso 
-            print(list_sign)
+
             if identificate_limit[1] == True:
                 if self.is_pos_repeated(identificate_limit[0], list_sign) == False:
                     list_sign.append(identificate_limit[0])
@@ -57,14 +57,7 @@ class LimitPoints():
 
     def increase_limit(self, pos2, text):
         increaser = INCREASE_LIMIT
-        print("aqui 1")
-        print(pos2)
         new_lim_up = pos2 + increaser
-        
-        print(text[pos2])        
-        print(type(new_lim_up))
-        print("aqui 2")
-        print(new_lim_up)
         if new_lim_up >= len(text):
             new_lim_up = len(text)
             return new_lim_up
