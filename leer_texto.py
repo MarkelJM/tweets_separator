@@ -7,6 +7,7 @@ class IdentificateCutPoint():
         
         index = 0
         sign_flag = False
+        self.text = text
         """
         leera si entre los limites facilitados hay signos o no
         """
@@ -14,8 +15,8 @@ class IdentificateCutPoint():
         #comparara si entre los limites logicos del texto hay signos de cortes
         for pos in range(lim_down, lim_up):
             #identifica signos de cortes
-            if self.is_cutter(pos, text) == True:# compara si es un signo o no///self.text  is not neccfessary, but we need it for the test
-                index = pos
+            if self.is_cutter(pos, self.text) == True:# compara si es un signo o no///self.text  is not neccfessary, but we need it for the test
+                index = pos 
                 sign_flag = True
             
         return index, sign_flag
@@ -30,9 +31,9 @@ class IdentificateCutPoint():
         else:
             return False
 
-    def seek_last_space(self,  lim_down, lim_up, text):
+    def seek_last_space(self,  lim_down, lim_up):
         #str_space = " "
         for pos in range(lim_down, lim_up, -1): 
-            if text[pos] == " ":
+            if self.text[pos] == " ":
                 return pos
 
