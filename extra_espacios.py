@@ -2,25 +2,24 @@ from setting import SPACE
 
 class EliminatedSpaces():
 
-    def __init__(self, text) -> None:
-        self.space = SPACE
-        self.past_char = ""
-        self.text = text
-        
-        
+    def compare_last_char(self, text):
+        """
+        HAY UN ERROR, DEVUELVE
+        """
 
-
-    def compare_last_char(self):
+        space = SPACE
+        past_char = ""
+        text = text
         list_repeated_space = []
-        for pos in range(len(self.text)):
+        for pos in range(len(text)):
             
-            if self.text[pos] == self.space and self.past_char == self.space:
+            if text[pos] == space and past_char == space:
                 """
                 añade a una lista si hay espacios seguidos, si antes tenia una elemento alfabetico no lo añadira
                 """
                 list_repeated_space.append(pos)
                 
-            self.past_char = self.text[pos]
+            past_char = text[pos]
         return list_repeated_space
     
     def check_continue_spaces(self, list):
@@ -64,7 +63,7 @@ class EliminatedSpaces():
     def clean_clone_text(self, text):
         texto_final = ""
         texto_original = text
-        tupla_espacios = self.check_continue_spaces(self.compare_last_char())
+        tupla_espacios = self.check_continue_spaces(self.compare_last_char(text))
         list_space_start = tupla_espacios[0]
         list_space_length = tupla_espacios[1]
         for i in range(len(list_space_start)):
